@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run a script
-        run: echo "This is a pull request workflow testy test!"
+        run: echo "This is a pull request workflow v2 testy test!"
