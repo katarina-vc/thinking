@@ -1,6 +1,6 @@
 name: PR Test Workflow
 
-on: pull_request
+on: pull_request_target
 
 jobs:
   test:
@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run a script
-        run: echo "This is a pull request workflow testy test!"
+        run: echo "This is a pull request workflow target testy test!"
