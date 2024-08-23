@@ -1,1 +1,3 @@
-thinking about stuff and things
+thinking about stuff and things.
+
+a handful of notes.
