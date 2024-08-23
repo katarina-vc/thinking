@@ -1,0 +1,13 @@
+name: PR Test Workflow
+
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Run a script
+        run: echo "This is a pull request workflow testy test!"
