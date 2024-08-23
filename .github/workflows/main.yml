@@ -1,13 +1,19 @@
 name: PR Test Workflow
 
-on: pull_request
+on:
+  pull_request_target:
+    types: [opened, synchronize]
 
 jobs:
-  test:
+  auto-merge:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out code
+      - name: Check out the repository
         uses: actions/checkout@v2
 
-      - name: Run a script
-        run: echo "This is a pull request workflow v2 testy test!"
+      - name: Auto merge the PR
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} --squash --admin --repo ${{ github.repository }} --head ${{ github.event.pull_request.head.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
